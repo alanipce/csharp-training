@@ -24,6 +24,8 @@ namespace GuessItGame
             // Begin the game
             int minNumber = 0;
             int maxNumber = 25;
+            int attemptLimit = 5;
+            int numberOfAttempts = 0;
 
             Random random = new Random();
 
@@ -31,15 +33,29 @@ namespace GuessItGame
             int guess = -1;
             Console.WriteLine("Guess It: I am thinking of a number between {0} and {1}", minNumber, maxNumber);
 
-            string guessInput = Console.ReadLine();
+            while (numberOfAttempts < attemptLimit) {
+                string guessInput = Console.ReadLine();
 
-            if (!int.TryParse(guessInput, out guess)) {
-                Console.WriteLine("I can only work with numbers right now :(");
-            } else if (guess == answer) {
-                Console.WriteLine("You got it! It was " + answer);
-            } else {
-                Console.WriteLine("errrmm that wasn't it");
+                if (!int.TryParse(guessInput, out guess))
+                {
+                    Console.WriteLine("I can only work with numbers right now :(");
+                }
+                else if (guess == answer)
+                {
+                    Console.WriteLine("You got it! It was " + answer);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("errrmm that wasn't it");
+                }
+
+                numberOfAttempts++;
+                Console.WriteLine("You have {0} attempts left", attemptLimit - numberOfAttempts);
             }
+
+            Console.WriteLine("Thanks for playing {0}", playerName);
+
         }
     }
 }
