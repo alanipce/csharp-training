@@ -1,0 +1,11 @@
+/Users/alan/Development/training/c#-training/GuessItGame/bin/Debug/netcoreapp2.1/GuessItGame.deps.json
+/Users/alan/Development/training/c#-training/GuessItGame/bin/Debug/netcoreapp2.1/GuessItGame.runtimeconfig.json
+/Users/alan/Development/training/c#-training/GuessItGame/bin/Debug/netcoreapp2.1/GuessItGame.runtimeconfig.dev.json
+/Users/alan/Development/training/c#-training/GuessItGame/bin/Debug/netcoreapp2.1/GuessItGame.dll
+/Users/alan/Development/training/c#-training/GuessItGame/bin/Debug/netcoreapp2.1/GuessItGame.pdb
+/Users/alan/Development/training/c#-training/GuessItGame/obj/Debug/netcoreapp2.1/GuessItGame.csprojAssemblyReference.cache
+/Users/alan/Development/training/c#-training/GuessItGame/obj/Debug/netcoreapp2.1/GuessItGame.csproj.CoreCompileInputs.cache
+/Users/alan/Development/training/c#-training/GuessItGame/obj/Debug/netcoreapp2.1/GuessItGame.AssemblyInfoInputs.cache
+/Users/alan/Development/training/c#-training/GuessItGame/obj/Debug/netcoreapp2.1/GuessItGame.AssemblyInfo.cs
+/Users/alan/Development/training/c#-training/GuessItGame/obj/Debug/netcoreapp2.1/GuessItGame.dll
+/Users/alan/Development/training/c#-training/GuessItGame/obj/Debug/netcoreapp2.1/GuessItGame.pdb
