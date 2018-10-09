@@ -1,0 +1,11 @@
+/Users/alan/Development/training/c#-training/Algorithms/bin/Debug/netcoreapp2.1/Algorithms.deps.json
+/Users/alan/Development/training/c#-training/Algorithms/bin/Debug/netcoreapp2.1/Algorithms.runtimeconfig.json
+/Users/alan/Development/training/c#-training/Algorithms/bin/Debug/netcoreapp2.1/Algorithms.runtimeconfig.dev.json
+/Users/alan/Development/training/c#-training/Algorithms/bin/Debug/netcoreapp2.1/Algorithms.dll
+/Users/alan/Development/training/c#-training/Algorithms/bin/Debug/netcoreapp2.1/Algorithms.pdb
+/Users/alan/Development/training/c#-training/Algorithms/obj/Debug/netcoreapp2.1/Algorithms.csprojAssemblyReference.cache
+/Users/alan/Development/training/c#-training/Algorithms/obj/Debug/netcoreapp2.1/Algorithms.csproj.CoreCompileInputs.cache
+/Users/alan/Development/training/c#-training/Algorithms/obj/Debug/netcoreapp2.1/Algorithms.AssemblyInfoInputs.cache
+/Users/alan/Development/training/c#-training/Algorithms/obj/Debug/netcoreapp2.1/Algorithms.AssemblyInfo.cs
+/Users/alan/Development/training/c#-training/Algorithms/obj/Debug/netcoreapp2.1/Algorithms.dll
+/Users/alan/Development/training/c#-training/Algorithms/obj/Debug/netcoreapp2.1/Algorithms.pdb
