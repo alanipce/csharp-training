@@ -6,15 +6,18 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            int[] list = { 10, 25, 7, 2, 0 };
+            int[] numbers = collectNumbers();
 
-            Console.WriteLine("Before sort: {0}", string.Join(',', list));
-            mergesort(list);
-            Console.WriteLine("After sort: {0}", string.Join(',', list));
+            Console.WriteLine("Before sort: {0}", string.Join(',', numbers));
+            mergesort(numbers);
+            Console.WriteLine("After sort: {0}", string.Join(',', numbers));
 
-            int index = binarySearch(2, list);
-            Console.WriteLine("Index of 2: {0}", index);
+            int needle = readInteger();
+
+            int index = binarySearch(needle, numbers);
+            Console.WriteLine("Index of {0}: {1}", needle, index);
         }
+
 
         // array must be sorted in ascending order!
         static int binarySearch(int needle, int[] haystack) {
@@ -100,5 +103,56 @@ namespace Algorithms
             }
         }
 
+        static int[] collectNumbers()
+        {
+            Console.Write("Give me some numbers to crunch (separate multiple values with comma): ");
+            string input = Console.ReadLine();
+
+            string[] inputArray = input.Split(',');
+
+            try
+            {
+                int[] inputNumbers = new int[inputArray.Length];
+
+                for (int i = 0; i < inputArray.Length; ++i)
+                {
+                    inputNumbers[i] = int.Parse(inputArray[i]);
+                }
+
+                return inputNumbers;
+            }
+            catch (Exception)
+            {
+                int[] defaultNumbers = new int[] { 10, 25, 7, 2, 0 };
+                Console.WriteLine("It's OK I picked some for you! {0}", string.Join(',', defaultNumbers));
+
+                return defaultNumbers;
+            }
+        }
+
+        static int readInteger()
+        {
+            int integer;
+
+            Console.Write("Give me a number to find: ");
+
+            while (true)
+            {
+
+                string input = Console.ReadLine();
+
+
+                if (int.TryParse(input, out integer))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That didn't work...try another number");
+                }
+            }
+
+            return integer;
+        }
     }
 }
