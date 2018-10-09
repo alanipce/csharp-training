@@ -11,6 +11,30 @@ namespace Algorithms
             Console.WriteLine("Before sort: {0}", string.Join(',', list));
             mergesort(list);
             Console.WriteLine("After sort: {0}", string.Join(',', list));
+
+            int index = binarySearch(2, list);
+            Console.WriteLine("Index of 2: {0}", index);
+        }
+
+        // array must be sorted in ascending order!
+        static int binarySearch(int needle, int[] haystack) {
+            return binarySearch(needle, haystack, 0, haystack.Length - 1);
+        }
+
+        static int binarySearch(int needle, int[] haystack, int start, int end) {
+            if (start > end || start < 0 || end >= haystack.Length) {
+                return -1;
+            }
+
+            int mid = start + (end - start) / 2;
+
+            if (haystack[mid] == needle) {
+                return mid;
+            } else if (haystack[mid] > needle) {
+                return binarySearch(needle, haystack, start, mid - 1);
+            } else {
+                return binarySearch(needle, haystack, mid + 1, end);
+            }
         }
 
         static void mergesort(int[] array) {
