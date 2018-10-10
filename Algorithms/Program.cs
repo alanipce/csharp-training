@@ -7,14 +7,24 @@ namespace Algorithms
         static void Main(string[] args)
         {
             int[] numbers = collectNumbers();
+            Console.WriteLine(string.Join(',', numbers));
 
-            Console.WriteLine("Before sort: {0}", string.Join(',', numbers));
-            mergesort(numbers);
-            Console.WriteLine("After sort: {0}", string.Join(',', numbers));
+            Console.WriteLine("------ Merge Sort ------");
+            int[] mergeSortNumbers = new int[numbers.Length];
+            Array.Copy(numbers, mergeSortNumbers, numbers.Length);
+
+            mergesort(mergeSortNumbers);
+            Console.WriteLine(string.Join(',', mergeSortNumbers));
+
+            Console.WriteLine("------ Quick Sort ------");
+            int[] quicksortNumbers = new int[numbers.Length];
+            Array.Copy(numbers, quicksortNumbers, numbers.Length);
+
+            quicksort(quicksortNumbers);
+            Console.WriteLine(string.Join(',', quicksortNumbers));
 
             int needle = readInteger();
-
-            int index = binarySearch(needle, numbers);
+            int index = binarySearch(needle, quicksortNumbers);
             Console.WriteLine("Index of {0}: {1}", needle, index);
         }
 
@@ -38,6 +48,67 @@ namespace Algorithms
             } else {
                 return binarySearch(needle, haystack, mid + 1, end);
             }
+        }
+
+        static void quicksort(int[] array) {
+            quicksort(array, 0, array.Length - 1);
+        }
+
+        static void quicksort(int[] array, int left, int right)
+        {
+            if (left >= right || left < 0 || right >= array.Length) {
+                return;
+            }
+
+            int pivot = partition(array, left, right);
+            quicksort(array, left, pivot - 1);
+            quicksort(array, pivot + 1, right);
+        }
+
+        static int partition(int[] array, int left, int right) 
+        {
+            // start by picking arbitrary reference value as pivot
+            int pivot = left + (right - left) / 2;
+
+            while (left < right) {
+                while (left < array.Length && array[left] <= array[pivot])
+                {
+                    ++left;
+                }
+
+                while (right > 0 && array[right] > array[pivot])
+                {
+                    --right;
+                }
+
+                if (left < right) {
+                    // swap values of right and left
+                    swap(array, left, right);
+                }
+
+            }
+
+            // The final state of left and right pointers:
+
+            // The left pointer will end up at the position after the "true" pivot location
+            // or out of bounds. Everything to its left will be less than or equal to the current pivot value
+            // ,and everything at its location and to the right will be greater than the pivot value.
+
+            // The right pointer will end up at the "true" pivot position. It will always stop when it crosses
+            // the left pointer (because everything to the left of the left pointer is less than or equal to pivot value).
+            // The position pointed to by the right pointer will have everything to its right be greater than the current
+            // pivot value, and everything at its location and to the left less than or equal to the pivot value. This
+            // is the definition of the pivot and therefore the "true" pivot position.
+            swap(array, pivot, right);
+            pivot = right;
+
+            return pivot;
+        }
+
+        static void swap(int[] array, int index1, int index2) {
+            int temp = array[index1];
+            array[index1] = array[index2];
+            array[index2] = temp;
         }
 
         static void mergesort(int[] array) {
